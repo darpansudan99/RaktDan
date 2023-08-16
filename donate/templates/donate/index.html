@@ -1,0 +1,89 @@
+{% extends "donate/layout.html" %}
+{% load static %}
+
+{% block title %}Blood Fund{% endblock %}
+
+{% block stylelink %} 
+    <link href="{% static 'donate/styles.css' %}" rel="stylesheet">  
+    <link href="{% static 'donate/home.css' %}" rel="stylesheet"> 
+{% endblock %}
+
+{% block scriptlink %} <script src="{% static 'donate/index.js' %}"></script>{% endblock %}
+
+{% block body %}
+
+    <div class="homecontainer flexcont" style="justify-content: space-around;">
+        <div>
+            <h1 id="mainheading"> Rक्त दाN </h1>
+            <p id="toptext">
+                In the realm of selfless grace we dwell,<br>
+                Blood's poetry, a tale we'll forever tell.<br>
+                Each drop, a verse of life's profound art,<br>
+                Uniting souls, healing every part.<br>
+                <br><br>
+            </p>
+        </div>
+        
+        <img src="{% static 'donate/images/heart2.png' %}" id="topimg">
+    </div>
+
+    <div class="container-sm">
+
+        <div class="card">
+        <h3>Search Donation places in your City</h3>
+        <div style="display:flex; flex-flow: row wrap;">
+            {% csrf_token %}
+            <select class="form-control drop" aria-label="Search City" id="drop1">
+                <option value="Select Your City" selected>Select Your City</option>
+                <option value="Punjab">Kapurthala</option>
+                <option value="Bandra">Jalandhar</option>
+                <option value="Goregaon">Amritsar</option>
+                <option value="Juhu">Chandigarh</option>
+                <option value="Khar Road">Bathinda</option>
+                <option value="Santacruz">Ludhiana</option>
+                <option value="Vile Parle">Delhi</option> 
+                <option value="Vile Parle">Jammu</option>
+                <option value="Vile Parle">Lucknow</option>
+                <option value="Vile Parle">Bahadurgarh</option>
+                <option value="Vile Parle">Kathua</option>
+                <option value="Vile Parle">Pathankot</option>
+                <option value="Vile Parle">Sri Nagar</option>
+                <option value="Vile Parle">Delhi</option> 
+                <option value="Vile Parle">Lakhanpur</option>
+                <option value="Vile Parle">Madhopur</option>
+                <option value="Vile Parle">Jalandhar</option>
+                <option value="Vile Parle">Delhi</option> 
+                <option value="Vile Parle">Delhi</option> 
+                <option value="Vile Parle">Delhi</option> 
+            </select>
+            <button type="submit" name="city_search" class="btn btn-info" id="submit1">Search</button>
+        </div>
+        </div>
+    
+        <br>
+        <div id="list"></div>
+
+        <img src="https://image.freepik.com/free-vector/blood-donation-station_74855-6261.jpg" id="middleimg">
+        
+        {% if user.is_hospital == True %}
+        <br>
+            <h2>Search Blood Units in Banks</h2>
+            <div style="display:flex; flex-flow: row wrap;" class="card">
+                {% csrf_token %}
+                <select class="form-control drop" name="blood_bank_type" required id="drop2">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <button type="submit" name="blood_search" class="btn btn-info" id="submit2">Search</button>
+            </div>
+                
+            <div class="card" id="unitr"></div>    
+        {% endif %}
+    </div>
+{% endblock %}         

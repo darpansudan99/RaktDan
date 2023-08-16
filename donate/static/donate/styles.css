@@ -1,0 +1,93 @@
+body {
+    align-items: center;
+    justify-content: center;
+}
+
+.h1title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#registerOptionDonorCard, #registerOptionHospitalCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h5 {
+    font-size: 1.75rem;
+}
+
+.link, .link:active, .link:focus, .link:hover  {
+    color: white; 
+}
+
+
+#logincontainer {
+    margin-left: 15%;
+    margin-right: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#loginimage {
+    padding-left: 8%;
+    width: 40%;
+    margin-top: 100px;
+    margin-left: 5%;
+}
+
+.form-control {
+    max-width: 500px;
+}
+
+.logincard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border : 2px solid grey;
+    border-radius: 20px;
+    padding: 20px;
+    padding-left: 25px;
+    width: auto;
+    margin-top: 100px;
+    max-height: 355px;
+}
+
+
+a, a:hover, a:focus, a:active, a:visited {
+    color: black
+}
+
+#submit1, #submit2 {
+    background-color: #232323;
+    color: aliceblue;
+    margin-left: 10%;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 3% 10% 2% 5% ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 20px;   
+}
+
+.table {
+    margin-right: 100px;
+}
+
+tr, td {
+    padding: 5px 5px 5px 5px;
+}
+
+td {
+    width: fit-content;
+}
+
+.rcard {
+    padding: 0% 0% 0% 0% ;
+}
+
+@media screen and (max-width: 700px) {
+    #loginimage {
+        display: none;
+    }
+}

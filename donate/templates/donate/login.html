@@ -1,0 +1,43 @@
+{% extends "donate/layout.html" %}
+{% load static %}
+
+{% block title %} Login {% endblock %}
+
+
+{% block stylelink %} <link href="{% static 'donate/styles.css' %}" rel="stylesheet"> {% endblock %}
+
+
+{% block body %}
+
+    
+<div  id="logincontainer">
+    <div class="logincard">
+
+        <br>
+        <h2 class="h1title">Login</h2>
+        <br>
+
+        {% if message %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <input class="btn btn-dark" type="submit" value="Login">
+        </form>
+
+        <br>
+        <div class="center">Don't have an account? <a href="{% url 'register' %}">Register here.</a></div>
+
+    </div>
+
+    <img src="https://image.freepik.com/free-vector/sign-concept-illustration_114360-5475.jpg" id="loginimage"> 
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+body {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1D2339), color-stop(50%,#2A3350), color-stop(100%,#4C5B8D ));
+}
+
+.nav {
+    background-color: white;
+} 
+
+.requestscontainer {
+    margin: 40px 7% 100px 7%;
+}
+
+a, a:hover, a:focus, a:active, a:visited {
+    color: black
+}
+
+.input {
+    margin-top: 10px;
+}
+
+#dropdown {
+    width: 30%;
+}
+
+#submit, .submit {
+    background-color: #232323;
+    color: aliceblue;
+}
+
+.submit{
+    margin-right: 10px;
+}
+
+.table {
+    margin-right: 100px;
+    width: 90%;
+}
+
+tr, td {
+    padding: 5px 5px 5px 5px;
+    width: fit-content;
+}
+
+h3 {
+    margin-bottom: 25px;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 2.5% 2% 2% 7% ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 20px;   
+}
+
+img {
+    margin-left: 75px;
+}

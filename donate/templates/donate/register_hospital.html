@@ -1,0 +1,59 @@
+{% extends "donate/layout.html" %}
+
+{% block title %} Register as Hospital {% endblock %}
+
+{%load static%}
+{% block stylelink %} <link href="{% static 'donate/registration_style.css' %}" rel="stylesheet"> {% endblock %}
+
+
+{% block body %}
+
+    <div class="Registrationcontainer">
+
+    <div class="Registration_tile" id="hospitaltile"> 
+
+        <h2 class="h1title">Register</h2>
+        <p style="color:#7E7E7E">Please fill this form to create a Recipient account!</p>
+            <br>
+
+        {% if message %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+ 
+        <form action="{% url 'registerOption' option='hospital' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" autofocus type="text" name="username" placeholder="Recipient Name" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="street" placeholder="Street" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="city" placeholder="City" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="state" placeholder="State" required>
+            </div>
+             <div class="form-group">
+                <input class="form-control" type="text" name="phone_no" placeholder="Phone Number (10 digit)" >
+            </div> 
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password" required>
+            </div>
+            <input class="btn btn-info" type="submit" value="Register" id="reg2">
+        </form>
+
+        <div class="alert alert-dark">
+            Already have an account? <a class="alert-link" href="{% url 'login' %}">Log In here.</a>
+        </div>
+        
+    </div>
+    </div>
+    
+{% endblock %}

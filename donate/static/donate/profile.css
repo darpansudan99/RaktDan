@@ -1,0 +1,47 @@
+.profilecontainer {
+ background-size: contain;
+}
+
+.top {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1D2339), color-stop(50%,#2A3350), color-stop(100%,#4C5B8D ));
+    color: white;
+    padding: 50px 2% 50px 10%;
+    display: flex;
+    z-index: -1;
+    flex-flow: row wrap;
+}
+
+.top_h{height: 300px;}
+.top_d{height: 350px;}
+
+.top > img {
+    border-radius: 50%;
+    height: 150px;
+    margin-right: 5% ;
+}
+
+#username {
+    font-size: 50px;
+}
+
+#name, #group, #gender, #age {
+    padding-left: 10px;
+    font-size: 20px;
+}
+.bottom {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 50px 2% 50px 10%;
+    z-index: 1;
+    margin: -40px 10% 60px 10%; 
+    background-color: white;  
+}
+
+a, a:hover, a:focus, a:active, a:visited {
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    .top > img {display: none;}
+    .top_h {height: 220px;}
+}

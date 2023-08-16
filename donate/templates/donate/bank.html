@@ -1,0 +1,59 @@
+{% extends "donate/layout.html" %}
+
+{%load static%}
+{% block stylelink %} <link href="{% static 'donate/profile.css' %}" rel="stylesheet"> {% endblock %}
+
+{% block title %}Blood Bank Page{% endblock %}
+
+{% block body %}
+
+    <div class="profilecontainer">
+
+    <div class="top top_b">
+        <br>
+            <img src="https://image.freepik.com/free-vector/blood-donation-doctor-patient-cartoon-characters-volunteer-donating-blood-transfusion-hospital-healthcare-laboratory-donor-vector-isolated-concept-metaphor-illustration_335657-1290.jpg">
+            <div>
+
+                    <p id="username">{{ bank }}<p>
+                    Phone No: {{ bank.dp_no.phone_no }}
+            </div>
+    </div>
+
+    <div class="bottom">
+
+            <h3>Blood Units Available</h3>
+
+            <table class="table table-hover">
+            <tr>
+                <th scope="col">Blood type</th>
+                <th scope="col">No of units</th>
+            </tr>
+                {% for unit in units %}
+                    <tr>
+                        <td>{{ unit.blood_group }}</td>
+                        <td>{{ unit.no_of_units }}</td>
+                    </tr>
+                {% empty %}
+                    <hr>No Entries Found<hr>  
+                {% endfor %}
+            </table>
+
+    </div>
+
+    <div class="bottom">
+            <h3>Address</h3>
+            <p  style="padding-left: 20px">
+                {{ bank.dp_no.street }}, <br> {{ bank.dp_no.city }}, <br> {{ bank.dp_no.state }}
+            </p> 
+            <br>
+            <h3>Contact Details</h3>
+            <p >
+                <strong  style="padding-left: 20px">Phone No:</strong> {{ bank.dp_no.phone_no }}
+            </p> 
+
+
+    </div>
+
+    </div>
+
+{% endblock %}

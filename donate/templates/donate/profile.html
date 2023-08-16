@@ -1,0 +1,74 @@
+{% extends "donate/layout.html" %}
+
+{%load static%}
+{% block stylelink %} <link href="{% static 'donate/profile.css' %}" rel="stylesheet"> {% endblock %}
+
+{% block title %}Profile Page{% endblock %}
+
+{% block body %}
+
+<div class="profilecontainer">
+
+    {% if user1.is_hospital == False %}
+        <div class="top top_d">
+    {% else %}
+        <div class="top top_h">
+    {% endif %}
+
+        <br>
+            {% if user1.is_hospital == False %}
+                <img src="https://image.freepik.com/free-vector/people-donating-blood-background-flat-design_23-2148257793.jpg">
+            {% else %}
+                <img src="https://image.freepik.com/free-vector/hospital-building-ambulance_260807-282.jpg">
+            {% endif %}
+            <div>
+                <p id="username">@{{ user1.username }}</p>           
+                
+                {% if user1.is_hospital == False %}
+                    <div id="name">{{ user1.first_name }} {{ user1.last_name }}</div>
+                    <div id="group">Blood Group: {{ user1.blood_type }}</div>
+                    <div id="gender">Sex: {{ user1.gender }}</div>
+                    <div id="age">Age: {{age}} </div>   
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    <div class="bottom">
+        {% if user1.is_hospital == False %}
+            <h3>Date of Birth</h3>
+            <p  style="padding-left: 20px">
+                {{ user1.dob }}
+            <br>
+        {% endif %}
+        
+        <h3>Address</h3>
+        <p  style="padding-left: 20px">
+            {{ user1.street }} <br> {{ user1.city }} <br> {{ user1.state }}
+        </p>
+        <br>
+        
+        <h3>Contact Details</h3>
+        <p style="padding-left: 20px">
+            <strong>Email: </strong>  <p style="padding-left:40px "> {{ user1.email }}<br> </p>
+            <strong  style="padding-left: 20px">Phone No:</strong> <br> <p style="padding-left:40px "> {{ user1.phone_no }} </p>
+        </p>
+
+    </div>
+
+    {% if user1.is_hospital == False %}
+        <div class="bottom">
+            <h2>Donations</h2>
+            <ul>
+                {% for donation in donations %}
+                    <li>{{ donation.name }} </li>
+                {% empty %}
+                    <li>No Entries Found</li>
+                {% endfor %} 
+            </ul>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

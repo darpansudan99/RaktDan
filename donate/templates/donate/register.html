@@ -1,0 +1,49 @@
+{% extends "donate/layout.html" %}
+
+{% load static %}
+
+{% block title %} 
+    Register 
+{% endblock %}
+
+{% block stylelink %} <link href="{% static 'donate/styles.css' %}" rel="stylesheet"> {% endblock %}
+
+
+{% block body %}
+
+     <div class="container">
+
+        <br>
+
+        <h1 class="h1title">Register!</h1>
+        
+        <br>
+
+        <div class="card-deck">
+            <div class="card rcard mb-3" style="min-width: 18rem; max-width: 30rem;" id="registerOptionHospitalCard">
+                <img class="card-img-top" src="{% static 'Main/download.jpeg'%}">
+                <div class="card-body">
+                    <h5 class="card-title">Register as a Recipient!</h5>
+                    <p class="card-text">Join our large community and have the freedom to quickly contact Blood banks and donors 
+                        as per your blood unit needs to increase efficiency and avoide wastage of time.</p> <br>
+                    <a href="{% url 'registerOption' option='hospital' %}" class="btn btn-dark link" style="color: white;">Register!</a>
+                </div>
+            </div>
+
+
+            <div class="card rcard mb-3" style="min-width: 18rem; max-width: 30rem;" id="registerOptionDonorCard">
+                <img class="card-img-top" src="https://image.freepik.com/free-vector/illustration-people-donating-blood_52683-22259.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Register as a Donor!</h5>
+                    <p class="card-text">Join our large community of blood donors and help for a good cause by tracking your donations 
+                        and knowing about blood banks and donation camp details.</p> 
+                    <a href="{% url 'registerOption' option='donor' %}" class="btn btn-dark link" style="color: white;">Register!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+
+    
+{% endblock %}

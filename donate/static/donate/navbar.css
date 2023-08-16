@@ -1,0 +1,15 @@
+#navbar {
+    padding-left: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    position: sticky;
+    top:0;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    z-index: 5;
+} 
+
+.nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}

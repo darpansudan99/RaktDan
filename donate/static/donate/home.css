@@ -1,0 +1,49 @@
+.homecontainer{
+    background-color:#040d21;
+    height:350px;
+    padding: 2% 3% 2% 3% ;
+}
+
+#mainheading {
+    color:aliceblue;
+    font-size: 80px;
+    padding-top: 20px;
+    font-weight: 700;
+    font-family: Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+#toptext {
+    margin-left: 2%;
+    color: #8193b2;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+#topimg {
+    margin: 10px 0% 50px 0%;
+    height: 90%;
+    max-height: 400px;
+}
+
+.flexcont
+{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#middleimg {
+    width:50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10px;
+}
+
+.drop{
+    width: 50%;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 800px) {
+    #topimg{display: none;}
+}

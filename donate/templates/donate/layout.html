@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" href="https://previews.123rf.com/images/pixdesign123/pixdesign1231408/pixdesign123140800173/31092174-cartoon-character-of-blood-drop-with-best-sign.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'donate/navbar.css' %}" rel="stylesheet"> 
+        {% block stylelink %} {% endblock %}
+        {% block scriptlink %} {% endblock %}
+    </head>
+    <body>  
+        <div id="navbar">
+        <ul class="nav nav-pills">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'requests' %}">Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' name=user.username %}">Signed in as <strong>{{ user }}</strong></a>
+                </li>
+                
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+            {% endif %}
+        </ul>
+        </div>
+
+        {% block body %}
+        {% endblock %}
+    
+    
+    </body>
+    
+</html>
